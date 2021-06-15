@@ -1,0 +1,148 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/12/String.jack
+
+/**
+ * Represents character strings. In addition for constructing and disposing
+ * strings, the class features methods for getting and setting individual
+ * characters of the string, for erasing the string's last character,
+ * for appending a character to the string's end, and more typical
+ * string-oriented operations.
+ */
+class String {
+
+    field Array str;  // The string it self
+    field int max_len;  // The string's maximum length
+    field int len;  // The string's actual length
+
+    /** constructs a new empty string with a maximum length of maxLength
+     *  and initial length of 0. */
+    constructor String new(int maxLength) {
+        if (~(maxLength > 0)){  // Dealing with a non-positive length
+            let maxLength = 1;
+        }
+        let str = Array.new(maxLength);
+        let max_len = maxLength;
+        let len = 0;
+        return this;
+    }
+
+    /** Disposes this string. */
+    method void dispose() {
+        do Memory.deAlloc(str);
+        return;
+    }
+
+    /** Returns the current length of this string. */
+    method int length() {
+        return len;
+    }
+
+    /** Returns the character at the j-th location of this string. */
+    method char charAt(int j) {
+        return str[j];
+    }
+
+    /** Sets the character at the j-th location of this string to c. */
+    method void setCharAt(int j, char c) {
+        let str[j] = c;
+        return;
+    }
+
+    /** Appends c to this string's end and returns this string. */
+    method String appendChar(char c) {
+        if (len < max_len) {
+            let str[len] = c;
+            let len = len + 1;
+        }
+        return this;
+    }
+
+    /** Erases the last character from this string. */
+    method void eraseLastChar() {
+        if (len > 0) { let len = len - 1; }
+        return;
+    }
+
+    method boolean is_digit(char c) {
+        return (c > 47) & (c < 58);
+    }
+
+    /** Returns the integer value of this string, 
+     *  until a non-digit character is detected. */
+    method int intValue() {
+        var int val;
+        var int d;
+        var int i;
+        var boolean neg;
+
+        let val = 0;
+        let i = 0;
+        if (str[i] = 45) {  // Dealing with negative numbers: '-' = 45 in ASCII
+            let neg = true;
+            let i = i + 1;
+        }
+        while (i < len) {
+            if (~(is_digit(str[i]))) {
+                if (neg) { return -val; }
+                else { return val; }
+            }
+            let d = str[i] - 48;  // Gets the actual integer corresponding to the ASCII code
+            let val = val * 10 + d;
+            let i = i + 1;
+        }
+
+        if (neg) { return -val; }
+        else { return val; }
+    }
+
+    function char int_to_char(int val) {
+        return 48 + val;
+    }
+
+    method void setIntPos(int val) {
+        var int new_val;
+        var char c;
+        var int lastDigit;
+
+        let new_val = val / 10;
+        let lastDigit = val - (new_val * 10);
+        let c = String.int_to_char(lastDigit);
+
+        if (val < 10) {
+            do appendChar(c);
+        }
+        else{
+            do setIntPos(new_val);
+            do appendChar(c);
+        }
+        return;
+    }
+
+    /** Sets this string to hold a representation of the given value. */
+    method void setInt(int val) {
+        let len = 0;
+        // dealing with negative numbers
+        if (val < 0) {
+            do appendChar(45);  // '-' = 45 in ASCII
+        }
+        do setIntPos(Math.abs(val));
+        return;
+    }
+
+    /** Returns the new line character. */
+    function char newLine() {
+        return 128;
+    }
+
+    /** Returns the backspace character. */
+    function char backSpace() {
+        return 129;
+    }
+
+    /** Returns the double quote (") character. */
+    function char doubleQuote() {
+        return 34;
+    }
+}

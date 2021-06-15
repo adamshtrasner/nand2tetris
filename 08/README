@@ -1,0 +1,21 @@
+adam.shtrasner
+===============================================================================
+Adam Shtrasner, ID 208837260, adam.shtrasner@mail.huji.ac.il
+===============================================================================
+
+                           Project 8 - a tar file.
+                           ----------------------- 
+  
+
+Submitted Files
+---------------
+README - This file.
+VMtranslator - The execution file.
+Makefile - The make file.
+main.py - The main program, python file.
+CodeWriter.py - The code program, python file.
+Parser.py - The Parser program, python file
+
+Remarks
+-------
+The main.py uses the the other listed python files.

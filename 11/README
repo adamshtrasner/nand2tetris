@@ -1,0 +1,30 @@
+adam.shtrasner
+===============================================================================
+Adam Shtrasner, ID 208837260, adam.shtrasner@mail.huji.ac.il
+===============================================================================
+
+                           Project 11 - a tar file.
+                           ----------------------- 
+  
+
+Submitted Files
+---------------
+README - This file.
+JackCompiler - The execution file.
+Makefile - The make file.
+JackCompiler.py - The Jack compiler main program, python file.
+CompilationEngine.py - The compilation engine program, python file.
+VMWriter.py - The VM writer program, python file.
+SymbolTable.py - The symbol table program, python file.
+JackTokenizer.py - The tokenizer program, python file.
+
+Remarks
+-------
+I added a method fix_bug_identifier in the compilation engine program,
+which deals with a bug I have in the tokenizer: (the bug:)
+each time I declare a variable/subroutine name starting with a keyword,
+the tokenizer split the name into 2 - a keyword and an identifier.
+for example, if you named a function - 'double', the tokenizer split the
+name into 2: 'do' - keyword, 'uble' - identifier, which of course isn't correct.
+or declaring a variable - 'var int if_true', if_true will be split to 2 tokens in the same way.
+So pay attention: I probably did not cover it on every edge case, but I did all I could...
