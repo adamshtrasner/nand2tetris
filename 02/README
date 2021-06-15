@@ -1,0 +1,23 @@
+adam.shtrasner
+===============================================================================
+Adam Shtrasner, ID 208837260, adam.shtrasner@mail.huji.ac.il
+===============================================================================
+
+                           Project 2 - A tar file.
+                           ----------------------- 
+  
+
+Submitted Files
+---------------
+README - This file.
+Add16.hdl - The Add16 chip.
+Inc16.hdl - the Inc16 chip.
+ALU.hdl - The ALU chip.
+HalfAdder.hdl - The HalfAdder chip.
+FullAdder.hdl - The FullAdder chip.
+ShiftLeft.hdl - The ShiftLeft chip.
+ShiftRight.hdl - The ShiftRight chip.
+Mul.hdl - The Mul chip.
+
+Remarks
+-------

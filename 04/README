@@ -1,0 +1,26 @@
+adam.shtrasner
+===============================================================================
+Adam Shtrasner, ID 208837260, adam.shtrasner@mail.huji.ac.il
+===============================================================================
+
+                           Project 4 - a tar file.
+                           ----------------------- 
+  
+
+Submitted Files
+---------------
+README - This file.
+fill - a file which contains - Fill.asm
+mult - a file which contains - Mult.asm
+sort - a file which contains Sort.asm
+divide - a file which contains Divide.asm
+
+Remarks
+-------
+*Sort.asm was implemented by using the Bubble sort algorithm.
+*divide.asm was implemented by using the logic of long division -
+only bitwise, therefore we multiplied the divisor by 2 as long
+as its less then the divient(bitwise multiplying by 2 means shifting left),
+while the counter is for counting the number of times we need to multiply the
+temporary quotient(RAM[2]) by 2, and add it to RAM[15], which is the answer.
+

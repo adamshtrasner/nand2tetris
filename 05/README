@@ -1,0 +1,22 @@
+adam.shtrasner
+===============================================================================
+Adam Shtrasner, ID 208837260, adam.shtrasner@mail.huji.ac.il
+===============================================================================
+
+                           Project 5 - a tar file.
+                           ----------------------- 
+  
+
+Submitted Files
+---------------
+README - This file.
+Computer.hdl - The Computer chip.
+CPU.hdl - The CPU chip.
+ExtendAlu.hdl - The Extended ALU chip.
+Memory.hdl - The Memory chip.
+
+Remarks
+-------
+I know the CpuMul.hdl is missing - did not have time to think about 
+a proper solution to this chip :(
+

@@ -1,0 +1,27 @@
+adam.shtrasner
+===============================================================================
+Adam Shtrasner, ID 208837260, adam.shtrasner@mail.huji.ac.il
+===============================================================================
+
+                           Project 3 - a tar file.
+                           ----------------------- 
+  
+
+Submitted Files
+---------------
+README - This file.
+a - A directory to the chips below:
+  - Bit.hdl - The Bit chip.
+  - PC.hdl - The PC chip.
+  - RAM8.hdl - The RAM8 chip.
+  - RAM64.hdl - The RAM64 chip.
+  - Register.hdl - The Register chip.
+b - A directory to the chips below:
+  - RAM4K.hdl - The RAM4K chip.
+  - RAM16K.hdl - The RAM16K chip.
+  - RAM512.hdl - The RAM512 chip.
+  
+Remarks
+-------
+
+

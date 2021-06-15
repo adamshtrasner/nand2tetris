@@ -1,0 +1,32 @@
+adam.shtrasner
+===============================================================================
+Adam Shtrasner, ID 208837260, adam.shtrasner@mail.huji.ac.il
+===============================================================================
+
+                           Project 1 - A tar file.
+                           ----------------------- 
+  
+
+Submitted Files
+---------------
+README - This file.
+Not.hdl - The Not chip.
+And.hdl - The And chip.
+Or.hdl - The Or chip.
+Xor.hdl - The Xor chip.
+Mux.hdl - The Mux chip.
+DMux.hdl - The DMux chip.
+Not16.hdl - The Not16 chip.
+And16.hdl - The And16 chip.
+Or16.hdl - The Or16 chip.
+Mux16.hdl - The Mux16 chip.
+Or8Way.hdl - The Or8Way chip.
+Mux4Way16.hdl - The Mux4Way16 chip.
+Mux8Way16.hdl - The Mux8Way16 chip.
+DMux4Way.hdl - The DMux4Way chip.
+DMux8Way.hdl - The DMux8Way chip.
+
+Remarks
+-------
+* The basic gates - Not,And,Or,Xor,Mux and DMux were implemented directly with nand gates only.
+* The rest of the chips used the basic gates and one another.

@@ -1,0 +1,66 @@
+/**
+ * This chip multiplies 2 numbers.
+ * out = a[16] * b[16] 
+ */
+
+CHIP Mul{
+    IN a[16], b[16];
+    OUT out[16];
+
+    PARTS:
+	/* Like in regular multiplication: we multiply a with the first bit of b, if b[0] is 0 then we get zeroes and if it's 1, we get a */
+	Mux16(a=false,b=a,sel=b[0],out=x0);
+	
+	/* Like in regular multiplication, as we go on multiplying, we shift every result to the left
+	   and only then combine them all. In order to do that, everytime we move to the next bit in b
+       we shift a to the left */
+	ShiftLeft(in=a,out=a1);
+	
+	Mux16(a=false,b=a1,sel=b[1],out=x1);
+	ShiftLeft(in=a1,out=a2);
+	Mux16(a=false,b=a2,sel=b[2],out=x2);
+	ShiftLeft(in=a2,out=a3);
+	Mux16(a=false,b=a3,sel=b[3],out=x3);
+	ShiftLeft(in=a3,out=a4);
+	Mux16(a=false,b=a4,sel=b[4],out=x4);
+	ShiftLeft(in=a4,out=a5);
+	Mux16(a=false,b=a5,sel=b[5],out=x5);
+	ShiftLeft(in=a5,out=a6);
+	Mux16(a=false,b=a6,sel=b[6],out=x6);
+	ShiftLeft(in=a6,out=a7);
+	Mux16(a=false,b=a7,sel=b[7],out=x7);
+	ShiftLeft(in=a7,out=a8);
+	Mux16(a=false,b=a8,sel=b[8],out=x8);
+	ShiftLeft(in=a8,out=a9);
+	Mux16(a=false,b=a9,sel=b[9],out=x9);
+	ShiftLeft(in=a9,out=a10);
+	Mux16(a=false,b=a10,sel=b[10],out=x10);
+	ShiftLeft(in=a10,out=a11);
+	Mux16(a=false,b=a11,sel=b[11],out=x11);
+	ShiftLeft(in=a11,out=a12);
+	Mux16(a=false,b=a12,sel=b[12],out=x12);
+	ShiftLeft(in=a12,out=a13);
+	Mux16(a=false,b=a13,sel=b[13],out=x13);
+	ShiftLeft(in=a13,out=a14);
+	Mux16(a=false,b=a14,sel=b[14],out=x14);
+	ShiftLeft(in=a14,out=a15);
+	Mux16(a=false,b=a15,sel=b[15],out=x15);
+	ShiftLeft(in=a15,out=a16);
+	
+	//* Combining all xi together(i=0..15) */
+	Add16(a=x0,b=x1,out=y1);
+	Add16(a=y1,b=x2,out=y2);
+	Add16(a=y2,b=x3,out=y3);
+	Add16(a=y3,b=x4,out=y4);
+	Add16(a=y4,b=x5,out=y5);
+	Add16(a=y5,b=x6,out=y6);
+	Add16(a=y6,b=x7,out=y7);
+	Add16(a=y7,b=x8,out=y8);
+	Add16(a=y8,b=x9,out=y9);
+	Add16(a=y9,b=x10,out=y10);
+	Add16(a=y10,b=x11,out=y11);
+	Add16(a=y11,b=x12,out=y12);
+	Add16(a=y12,b=x13,out=y13);
+	Add16(a=y13,b=x14,out=y14);
+	Add16(a=y14,b=x15,out=out);	
+}
